@@ -22,7 +22,7 @@ const getNewProductView = (req, res) => {
     res.render('new-product', { product });
 };
 
-const getProductsView = (req, res) => {
+const getProductView = (req, res) => {
     const products = Product.getAll();
     res.render('products', {
         headTitle: "Shop - Products",

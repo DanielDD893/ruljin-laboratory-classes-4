@@ -22,12 +22,14 @@ const getNewProductView = (req, res) => {
     res.render('new-product', { product });
 };
 
-const getProductView = (req, res) => {
-    const { name } = req.params;
-    const product = Product.findByName(name);
-    res.render('product', { product });
-};
+const getProductsView = (req, res) => {
+    const products = Product.getAll();
+    res.render('products', {
+        headTitle: "Shop - Products",
+        products
+    });
 
+};
 const deleteProduct = (req, res) => {
     const { name } = req.params;
     Product.deleteByName(name);
